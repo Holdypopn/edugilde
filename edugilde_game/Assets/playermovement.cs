@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemymove : MonoBehaviour
+public class playermovement : MonoBehaviour
 {
-    private CharacterController enemy2;
+
+    private CharacterController Player;
+
     public float speed;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        enemy2 = GetComponent<CharacterController>();    
+        Player = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -18,6 +20,6 @@ public class enemymove : MonoBehaviour
     {
         Vector3 Move = Vector3.zero;
         Move.x = Input.GetAxis("Horizontal") * speed;
-        enemy2.Move(Move * Time.deltaTime);
+        Player.Move(Move * Time.deltaTime);
     }
 }
