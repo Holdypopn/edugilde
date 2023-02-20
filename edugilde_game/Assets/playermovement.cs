@@ -20,6 +20,7 @@ public class playermovement : MonoBehaviour
     {
         Vector3 Move = Vector3.zero;
         Move.x = Input.GetAxis("Horizontal") * speed;
+        Move.y = Input.GetAxis("Vertical") * speed;
         Player.Move(Move * Time.deltaTime);
     }
 }
