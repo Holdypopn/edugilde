@@ -11,9 +11,9 @@ public class BulletTravel : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Awake() 
+    void OnBecameInvisible() 
     {
-        Invoke("destroySelf", 2);
+         Destroy(gameObject);
     }
 
     // Start is called before the first frame update

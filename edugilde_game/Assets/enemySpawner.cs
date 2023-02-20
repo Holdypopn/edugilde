@@ -4,35 +4,51 @@ using UnityEngine;
 
 public class enemySpawner : MonoBehaviour
 {
-    public Transform spawnleft1;
-    public Transform spawnright1;
+    public Transform spawnLeft;
+    public Transform spawnRight;
+    public Transform spawnTop;
     public GameObject enemy1;
     public GameObject enemy2;
-    public float respawnTime1 = 5;
+    public float respawnTime1 = 1;
     public float respawnTime2 = 15;
-    private float respawnCooldown;
+    private float respawnCooldown1;
+    private float respawnCooldown2;
+    public Camera cam;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(cam.orthographicSize); //value 11 - -6
+        Debug.Log(cam.aspect);
     }
 
     // Update is called once per frame
     void Update()
     {
-        respawnCooldown += Time.deltaTime;
-        if(respawnCooldown > respawnTime1)
+        respawnCooldown1 += Time.deltaTime;
+        if(respawnCooldown1 > respawnTime1)
         {
-            respawnCooldown = 0;
-            Instantiate(enemy1, spawnleft1.position, Quaternion.identity);
+            respawnCooldown1 = 0;
+            float r = Random.Range(-6, 12);
+            Debug.Log(r);
+            Vector3 v = new Vector3(0, r, 0);
+
+
+            List<Vector3> list = new List<Vector3>();
+            list.Add(spawnLeft.position);
+            list.Add(spawnRight.position);
+            int index = Random.Range(0, 2);
+            Debug.Log(index);
+
+
+            Instantiate(enemy1, (list[index] + v) , Quaternion.identity);
         }
-        respawnCooldown += Time.deltaTime;
-        if(respawnCooldown > respawnTime2)
+
+        respawnCooldown2 += Time.deltaTime;
+        if(respawnCooldown2 > respawnTime2)
         {
-            respawnCooldown = 0;
-            Instantiate(enemy2, spawnright1.position, Quaternion.identity);
+            respawnCooldown2 = 0;
+            Instantiate(enemy2, spawnRight.position, Quaternion.identity);
         }
     }
-
 }
