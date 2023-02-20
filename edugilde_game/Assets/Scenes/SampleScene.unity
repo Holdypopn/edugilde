@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnleft: {fileID: 707814635}
   enemy1: {fileID: 1966950315278207256, guid: dff0afde0488ea640a4b734d02455127, type: 3}
-  coolDownTime: 1
+  respawnTime: 5
 --- !u!1 &947163819
 GameObject:
   m_ObjectHideFlags: 0
