@@ -253,6 +253,7 @@ MonoBehaviour:
   spawnright: {fileID: 411921311}
   enemy2: {fileID: 9068752344266428319, guid: 1e5e7f6834dfaea4180fba6b18b13c6f, type: 3}
   respawnTime: 15
+  respawnCooldown: 0
 --- !u!4 &411921311
 Transform:
   m_ObjectHideFlags: 0
@@ -315,6 +316,7 @@ MonoBehaviour:
   spawnleft: {fileID: 707814635}
   enemy1: {fileID: 1966950315278207256, guid: dff0afde0488ea640a4b734d02455127, type: 3}
   respawnTime: 5
+  respawnCooldown: 0
 --- !u!1 &1045212854
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +498,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1889501005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889501007}
+  - component: {fileID: 1889501006}
+  m_Layer: 0
+  m_Name: enemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1889501006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889501005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cee56bd94f45514eacaa03e1e38748e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnleft1: {fileID: 707814635}
+  spawnright1: {fileID: 411921311}
+  enemy1: {fileID: 1966950315278207256, guid: dff0afde0488ea640a4b734d02455127, type: 3}
+  enemy2: {fileID: 9068752344266428319, guid: 1e5e7f6834dfaea4180fba6b18b13c6f, type: 3}
+  respawnTime1: 5
+  respawnTime2: 15
+--- !u!4 &1889501007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889501005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0039744, y: 1.309029, z: 0.75514674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &874093428680651003
 PrefabInstance:
