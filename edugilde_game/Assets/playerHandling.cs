@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playermovement : MonoBehaviour
+public class playerHandling : MonoBehaviour
 {
 
     private CharacterController Player;
@@ -23,4 +23,22 @@ public class playermovement : MonoBehaviour
         Move.y = Input.GetAxis("Vertical") * speed;
         Player.Move(Move * Time.deltaTime);
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("hallo");
+        if (collision.gameObject.tag.Equals("enemyBullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(this);
+        }
+        
+    }
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("hallo");
+        Destroy(hit.collider.gameObject);
+        Destroy(this);
+    }
+
+
 }

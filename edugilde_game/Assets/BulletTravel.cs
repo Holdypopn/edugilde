@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletTravel : MonoBehaviour
 {   
     public float speed = 2;
+    public Vector2 direction;
     internal void destroySelf()
     {
         gameObject.SetActive(false);
@@ -25,7 +26,7 @@ public class BulletTravel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime * Vector2.up);
+        transform.Translate(speed * Time.deltaTime * direction);
     }
 
     

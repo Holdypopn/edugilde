@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemy1move : MonoBehaviour
+public class enemy1Handling : MonoBehaviour
 {
     public float speed = 8;
     public GameObject player;
     private bool direction;
+    public Transform enemy1Gun;
+    public GameObject enemyBullet;
+    public float coolDownTime = 5;
+    private float shootTimer;
+    
     void OnBecameInvisible() 
     {
          Destroy(gameObject);
@@ -29,6 +34,14 @@ public class enemy1move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shootTimer += Time.deltaTime;
+
+        if(shootTimer > coolDownTime)
+        {
+            shootTimer = 0;
+            Instantiate(enemyBullet, enemy1Gun.position, Quaternion.identity);
+        }
+
         if(direction == true)
         {
             transform.Translate(speed * Time.deltaTime * Vector2.right);
@@ -41,12 +54,12 @@ public class enemy1move : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.name.Equals("bullet"))
+        
+        if (collision.gameObject.tag.Equals("bullet"))
         {
             scoreScript.scoreValue += 10;
-            Destroy (collision.gameObject);
-            Destroy (gameObject);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
         
     }
