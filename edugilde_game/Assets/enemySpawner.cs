@@ -18,8 +18,7 @@ public class enemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(cam.orthographicSize); //value 11 - -6
-        Debug.Log(cam.aspect);
+
     }
 
     // Update is called once per frame
@@ -30,16 +29,12 @@ public class enemySpawner : MonoBehaviour
         {
             respawnCooldown1 = 0;
             float r = Random.Range(-6, 12);
-            Debug.Log(r);
             Vector3 v = new Vector3(0, r, 0);
-
 
             List<Vector3> list = new List<Vector3>();
             list.Add(spawnLeft.position);
             list.Add(spawnRight.position);
             int index = Random.Range(0, 2);
-            Debug.Log(index);
-
 
             Instantiate(enemy1, (list[index] + v) , Quaternion.identity);
         }

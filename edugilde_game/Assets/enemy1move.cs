@@ -11,11 +11,7 @@ public class enemy1move : MonoBehaviour
     {
          Destroy(gameObject);
     }
-    internal void destroySelf()
-    {
-        gameObject.SetActive(false);
-        Destroy(gameObject);
-    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +41,13 @@ public class enemy1move : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        destroySelf();
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name.Equals("bullet"))
+        {
+            scoreScript.scoreValue += 10;
+            Destroy (collision.gameObject);
+            Destroy (gameObject);
+        }
+        
     }
 }

@@ -28,8 +28,5 @@ public class BulletTravel : MonoBehaviour
         transform.Translate(speed * Time.deltaTime * Vector2.up);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        destroySelf();
-    }
+    
 }
