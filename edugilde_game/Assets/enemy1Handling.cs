@@ -61,6 +61,11 @@ public class enemy1Handling : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.tag.Equals("player"))
+        {
+            Destroy(gameObject);
+        }
         
     }
 }

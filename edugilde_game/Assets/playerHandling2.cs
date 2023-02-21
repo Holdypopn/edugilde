@@ -42,4 +42,12 @@ public class playerHandling2 : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -yBorder, 0);
 
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("enemyBullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
 }
