@@ -23,7 +23,7 @@ public class playerHandling : MonoBehaviour
         Move.y = Input.GetAxis("Vertical") * speed;
         Player.Move(Move * Time.deltaTime);
     }
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("hallo");
         if (collision.gameObject.tag.Equals("enemyBullet"))

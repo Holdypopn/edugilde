@@ -23,4 +23,12 @@ public class playerHandling2 : MonoBehaviour
         var verticalInput = Input.GetAxis("Vertical") * speed;
         Player.velocity = new Vector2(horizontalInput, verticalInput);
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("enemyBullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
 }
