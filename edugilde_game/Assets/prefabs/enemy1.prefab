@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  player: {fileID: 874093429267961860, guid: 7ae4f4703f758074fb5a78f8d0ff8653, type: 3}
+  player: {fileID: 874093429267961860, guid: ffe645025df29944db904e8e11b228b4, type: 3}
   enemy1Gun: {fileID: 4703873358468264481}
   enemyBullet: {fileID: 3962460279500769492, guid: 7f6bfdff56419c640a62cff735f68dce, type: 3}
   coolDownTime: 1
