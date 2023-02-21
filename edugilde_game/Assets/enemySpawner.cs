@@ -28,7 +28,7 @@ public class enemySpawner : MonoBehaviour
         if(respawnCooldown1 > respawnTime1)
         {
             respawnCooldown1 = 0;
-            float r = Random.Range(-6, 10);
+            float r = Random.Range(-6, 12);
             Vector3 v = new Vector3(0, r, 0);
 
             List<Vector3> list = new List<Vector3>();

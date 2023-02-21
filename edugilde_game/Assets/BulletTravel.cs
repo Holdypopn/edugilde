@@ -5,15 +5,16 @@ using UnityEngine;
 public class BulletTravel : MonoBehaviour
 {   
     public float speed = 2;
+    public Vector2 direction;
     internal void destroySelf()
     {
         gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
-    private void Awake() 
+    void OnBecameInvisible() 
     {
-        Invoke("destroySelf", 2);
+         Destroy(gameObject);
     }
 
     // Start is called before the first frame update
@@ -25,11 +26,8 @@ public class BulletTravel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime * Vector2.up);
+        transform.Translate(speed * Time.deltaTime * direction);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        destroySelf();
-    }
+    
 }
