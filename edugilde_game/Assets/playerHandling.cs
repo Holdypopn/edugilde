@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerHandling : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class playerHandling : MonoBehaviour
     private Vector3 stageDimensions;
     private float xBorder;
     private float yBorder;
-    
+    public int MenuScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,10 @@ public class playerHandling : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yBorder, 0);
         else if(transform.position.y < -yBorder)
             transform.position = new Vector3(transform.position.x, -yBorder, 0);
+
+        // Brings player to Menu while ingame    
+        if(Input.GetKey(KeyCode.Escape))
+        SceneManager.LoadScene(MenuScene);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -48,5 +54,7 @@ public class playerHandling : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
-    }   
+    } 
+
+
 }
