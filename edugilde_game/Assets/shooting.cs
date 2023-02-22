@@ -11,6 +11,7 @@ public class shooting : MonoBehaviour
     private float shootTimer;
     public AudioClip gunshot;
     AudioSource audioSource;
+    public float volume = 0.02f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class shooting : MonoBehaviour
         {
             shootTimer = 0;
             Instantiate(bullet, gun.position, Quaternion.identity);
+            audioSource.volume = volume;
             audioSource.PlayOneShot(gunshot, 3);
         }
     }
