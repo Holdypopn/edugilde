@@ -26,4 +26,21 @@ public class suicideEnemyHandling : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.tag.Equals("bullet"))
+        {
+            scoreScript.scoreValue += 15;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag.Equals("player"))
+        {
+            Destroy(gameObject);
+        }
+        
+    }
 }
