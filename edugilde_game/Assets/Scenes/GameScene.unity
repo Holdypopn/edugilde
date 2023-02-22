@@ -182,10 +182,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 874093429267962367, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: gunshot
+      value: 
+      objectReference: {fileID: 8300000, guid: a6968faf86b7e2c48bea3be659cf069a, type: 3}
     - target: {fileID: 1262484713340390003, guid: ffe645025df29944db904e8e11b228b4, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1586617725}
+    - target: {fileID: 4579548289815341971, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579548289815341971, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe645025df29944db904e8e11b228b4, type: 3}
 --- !u!1 &287173822
@@ -699,6 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e42075dc62d17498fb833e7e865423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuScene: 0
   scoreText: {fileID: 0}
 --- !u!1 &1889501005
 GameObject:

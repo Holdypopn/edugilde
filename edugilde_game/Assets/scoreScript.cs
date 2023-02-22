@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class scoreScript : MonoBehaviour
 {
+    public int MenuScene;
     public static int scoreValue = 0;
     public TextMeshProUGUI scoreText;
     
@@ -19,5 +21,11 @@ public class scoreScript : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score " + scoreValue;
+
+    // Brings player to Menu while ingame    
+    if(Input.GetKey(KeyCode.Escape))
+    SceneManager.LoadScene(MenuScene);
+    
     }
+
 }
