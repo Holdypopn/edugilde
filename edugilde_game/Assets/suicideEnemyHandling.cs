@@ -17,7 +17,6 @@ public class suicideEnemyHandling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("POS: " + target.transform.position);
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
