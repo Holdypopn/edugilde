@@ -185,11 +185,15 @@ PrefabInstance:
     - target: {fileID: 874093429267962367, guid: ffe645025df29944db904e8e11b228b4, type: 3}
       propertyPath: gunshot
       value: 
-      objectReference: {fileID: 8300000, guid: a6968faf86b7e2c48bea3be659cf069a, type: 3}
+      objectReference: {fileID: 8300000, guid: 5832a743a0f12054b82df25b97184dc4, type: 3}
     - target: {fileID: 1262484713340390003, guid: ffe645025df29944db904e8e11b228b4, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1586617725}
+    - target: {fileID: 4579548289815341971, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: m_Volume
+      value: 0.189
+      objectReference: {fileID: 0}
     - target: {fileID: 4579548289815341971, guid: ffe645025df29944db904e8e11b228b4, type: 3}
       propertyPath: m_audioClip
       value: 

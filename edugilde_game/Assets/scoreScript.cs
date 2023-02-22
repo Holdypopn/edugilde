@@ -24,8 +24,7 @@ public class scoreScript : MonoBehaviour
 
     // Brings player to Menu while ingame    
     if(Input.GetKey(KeyCode.Escape))
-    SceneManager.LoadScene(MenuScene);
-    
+    SceneManager.LoadScene(MenuScene);    
     }
 
 }
