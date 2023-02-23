@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[RequireComponent(typeof(AudioSource))]
+// [RequireComponent(typeof(AudioSource))]
 public class shooting : MonoBehaviour
 {
     public Transform gun;
     public GameObject bullet;
     public float coolDownTime = 1;
     private float shootTimer;
-    public AudioClip gunshot;
-    AudioSource audioSource;
-    public float volume = 0.02f;
+    // public AudioClip gunshot;
+    // AudioSource audioSource;
+     // public float volume = 0.02f;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+       // audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -29,8 +28,8 @@ public class shooting : MonoBehaviour
         {
             shootTimer = 0;
             Instantiate(bullet, gun.position, Quaternion.identity);
-            audioSource.volume = volume;
-            audioSource.PlayOneShot(gunshot, 3);
+            // audioSource.volume = volume;
+            // audioSource.PlayOneShot(gunshot, 3);
         }
     }
 }
