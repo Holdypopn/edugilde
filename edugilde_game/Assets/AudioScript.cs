@@ -20,7 +20,7 @@ public class AudioScript : MonoBehaviour
     public void SetMasterSound()
     {
         audioMixer.SetFloat("gunshotVol", slider.value);
-        float percentage = (((-80.0f - slider.value)) / -80.0f) * 100.0f;
+        float percentage = (((60 + slider.value)) / 80) * 100;
         volumeText.text = ((int)percentage).ToString();
     }
 
@@ -30,7 +30,7 @@ public class AudioScript : MonoBehaviour
 
         audioMixer.GetFloat("gunshotVol", out value);
         slider.value = value;
-        percentage = ((-80.0f - value) / -80.0f) * 100.0f;
+        percentage = ((60 + value) / 80) * 100;
         volumeText.text = ((int)percentage).ToString();
     }        
 }

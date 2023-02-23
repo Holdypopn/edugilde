@@ -1390,10 +1390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9bd9afac3bc804eb844c1cecfa0ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterMixer: {fileID: 24100000, guid: 0167a90f6695796498f34f2ec7858850, type: 2}
   audioMixer: {fileID: 24100000, guid: 0167a90f6695796498f34f2ec7858850, type: 2}
-  gunshots: {fileID: 1609277608}
-  gunshotText: {fileID: 2009953794}
+  slider: {fileID: 1609277608}
+  volumeText: {fileID: 2009953794}
 --- !u!1 &1186131356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,10 +2138,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1414072163}
   m_HandleRect: {fileID: 1446261998}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -60
   m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: -20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2461,7 +2460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af5d9fa79e87c8346ba79e3dfe3b1186, type: 2}
   m_sharedMaterial: {fileID: 4242729345519167052, guid: af5d9fa79e87c8346ba79e3dfe3b1186, type: 2}

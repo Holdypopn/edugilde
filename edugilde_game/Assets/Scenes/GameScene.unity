@@ -752,7 +752,7 @@ MonoBehaviour:
   enemy1: {fileID: 8839780839974624775, guid: a2b1955e01955bc47a89a5ea096ce754, type: 3}
   enemy2: {fileID: 9068752344266428319, guid: 1e5e7f6834dfaea4180fba6b18b13c6f, type: 3}
   respawnTime1: 3
-  respawnTime2: 10
+  respawnTime2: 15
   cam: {fileID: 1586617725}
 --- !u!4 &1889501007
 Transform:
