@@ -7,22 +7,21 @@ using TMPro;
 
 public class AudioScript : MonoBehaviour 
 {
-    public AudioMixer masterMixer;
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] Slider gunshots;
-    [SerializeField] TMP_Text gunshotText;
+    [SerializeField] Slider slider;
+    [SerializeField] TMP_Text volumeText;
 
     void Start()
     {
-        gunshots.onValueChanged.AddListener(delegate {SetMasterSound(); });
+        slider.onValueChanged.AddListener(delegate {SetMasterSound(); });
         SetStartingValues();
     }
 
     public void SetMasterSound()
     {
-        audioMixer.SetFloat("gunshotVol", gunshots.value);
-        float percentage = (((-80.0f - gunshots.value)) / -80.0f) * 100.0f;
-        gunshotText.text = ((int)percentage).ToString();
+        audioMixer.SetFloat("gunshotVol", slider.value);
+        float percentage = (((-80.0f - slider.value)) / -80.0f) * 100.0f;
+        volumeText.text = ((int)percentage).ToString();
     }
 
     void SetStartingValues()
@@ -30,8 +29,8 @@ public class AudioScript : MonoBehaviour
         float percentage, value;
 
         audioMixer.GetFloat("gunshotVol", out value);
-        gunshots.value = value;
+        slider.value = value;
         percentage = ((-80.0f - value) / -80.0f) * 100.0f;
-        gunshotText.text = ((int)percentage).ToString();
+        volumeText.text = ((int)percentage).ToString();
     }        
 }
