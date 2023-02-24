@@ -10,6 +10,7 @@ TagManager:
   - suicideEnemy
   - enemy1
   - buttonsound
+  - lifeDrop
   layers:
   - Default
   - TransparentFX
