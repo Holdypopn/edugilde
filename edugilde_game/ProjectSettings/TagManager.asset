@@ -9,6 +9,7 @@ TagManager:
   - player
   - suicideEnemy
   - enemy1
+  - buttonsound
   layers:
   - Default
   - TransparentFX
