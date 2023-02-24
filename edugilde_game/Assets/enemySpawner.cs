@@ -43,7 +43,15 @@ public class enemySpawner : MonoBehaviour
         if(respawnCooldown2 > respawnTime2)
         {
             respawnCooldown2 = 0;
-            Instantiate(enemy2, spawnRight.position, Quaternion.identity);
+            float r = Random.Range(-6, 10);
+            Vector3 v = new Vector3(0, r, 0);
+
+            List<Vector3> list = new List<Vector3>();
+            list.Add(spawnLeft.position);
+            list.Add(spawnRight.position);
+            int index = Random.Range(0, 2);
+
+            Instantiate(enemy2, (list[index] + v) , Quaternion.identity);
         }
     }
 }
