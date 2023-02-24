@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class playerHandling : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class playerHandling : MonoBehaviour
             if (lives <= 0)
             {    
                 Destroy(gameObject);
-                //GameOver screen
+                SceneManager.LoadScene(0); //Loads Main Menu
             }            
         }
     }
