@@ -52,18 +52,21 @@ public class playerHandling : MonoBehaviour
         lifePics.transform.GetChild(lives).gameObject.SetActive(false);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.gameObject.tag.Equals("lifeDrop"))
+        if (col.gameObject.tag.Equals("lifeDrop"))
         {
-            Destroy(collision.gameObject);
+            Destroy(col.gameObject);
             if(lives < 3)
             {
                 lifePics.transform.GetChild(lives).gameObject.SetActive(true);
                 lives++;
             }
         }
+    }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
         if (collision.gameObject.tag.Equals("enemyBullet") || collision.gameObject.tag.Equals("suicideEnemy") || collision.gameObject.tag.Equals("enemy1"))
         {
             Destroy(collision.gameObject);
