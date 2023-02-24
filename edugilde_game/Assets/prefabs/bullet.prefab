@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8474812838290924090}
   - component: {fileID: -4561452475954679772}
   - component: {fileID: -7944178480348981277}
-  - component: {fileID: -3591730534531767841}
+  - component: {fileID: 2801980267246843316}
   m_Layer: 0
   m_Name: bullet
   m_TagString: bullet
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   direction: {x: 0, y: 1}
+  clip: {fileID: 8300000, guid: 12eb7ae99ab01d847a718694771c6b11, type: 3}
 --- !u!50 &-7944178480348981277
 Rigidbody2D:
   serializedVersion: 4
@@ -139,7 +140,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!82 &-3591730534531767841
+--- !u!82 &2801980267246843316
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,8 +149,8 @@ AudioSource:
   m_GameObject: {fileID: 3962460279500769492}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 22ead4f7b2adc174b80c86b4a5341f94, type: 3}
+  OutputAudioMixerGroup: {fileID: -7249712190642515786, guid: 0167a90f6695796498f34f2ec7858850, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 12eb7ae99ab01d847a718694771c6b11, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

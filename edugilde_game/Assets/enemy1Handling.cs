@@ -54,10 +54,12 @@ public class enemy1Handling : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+
         
         if (collision.gameObject.tag.Equals("bullet"))
         {
             scoreScript.scoreValue += 10;
+
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

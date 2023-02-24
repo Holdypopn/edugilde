@@ -12,7 +12,7 @@ public class shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
 
