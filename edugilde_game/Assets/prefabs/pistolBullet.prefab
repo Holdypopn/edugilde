@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -641603771744018972}
   - component: {fileID: -3053381555544073569}
   - component: {fileID: 157679568953622487}
+  - component: {fileID: 5447008146920778600}
   m_Layer: 0
   m_Name: pistolBullet
-  m_TagString: Untagged
+  m_TagString: pistolBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 14
-  direction: {x: 0, y: 0}
+  direction: {x: 0, y: 1}
 --- !u!82 &157679568953622487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -213,3 +214,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &5447008146920778600
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063113926203408281}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

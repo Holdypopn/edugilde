@@ -5,64 +5,73 @@ using UnityEngine;
 public class shooting : MonoBehaviour
 {
     public Transform gun;
-    public GameObject bullet;
-    public float coolDownTime = 1;
-    private float shootTimer = 0.1f;
-    private weapon weapon;
+    public GameObject pistolProjectile;
+    public GameObject machineGunProjectile;
+    public GameObject rocketProjectile;
     private pistol pistol;
     private machineGun machineGun;
     private rocketLauncher rocketLauncher;
+    private Config config;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        config = new Config();
+
         pistol = new pistol();
+        pistol.config.projectile = pistolProjectile;
         
         machineGun = new machineGun();
-        machineGun.projectile = bullet;
+        machineGun.config.projectile = machineGunProjectile;
 
         rocketLauncher = new rocketLauncher();
+        rocketLauncher.config.projectile = rocketProjectile;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
         if(Input.GetKey(KeyCode.Alpha1))
         {
-            pistol.getShootingConfig();
+            config = pistol.getShootingConfig();
         }
 
         if(Input.GetKey(KeyCode.Alpha2))
         {
-
+            config = machineGun.getShootingConfig();
         }
 
         if(Input.GetKey(KeyCode.Alpha3))
         {
-
+            config = rocketLauncher.getShootingConfig();
         }
 
-        //shootTimer += Time.deltaTime;
+        config.shootTimer += Time.deltaTime;
 
-        if(shootTimer > coolDownTime && Input.GetKey(KeyCode.Space))
+        if(config.shootTimer > config.coolDownTime && Input.GetKey(KeyCode.Space))
         {
-            shootTimer = 0;
-            Instantiate(bullet, gun.position, Quaternion.identity);
+            config.shootTimer = 0;
+            Instantiate(config.projectile, gun.position, Quaternion.identity);
         }
     }
 }
 
-public class weapon
+public struct Config
 {
+    public string name;
     public float shootTimer;
     public float coolDownTime;
     public GameObject projectile;
+}
 
-    public GameObject getShootingConfig()
+public class weapon
+{
+    public Config config;
+    public Config getShootingConfig()
     {
-        return projectile;
+        return config;
     }
 }
 
@@ -70,9 +79,9 @@ public class pistol : weapon
 {
     public pistol()
     {
-        //shootTimer
-        //coolDownTime
-        //bullet prefab
+        config.name = "pistol";
+        config.shootTimer = 0.1f;
+        config.coolDownTime = 0.5f;
     }
 }
 
@@ -80,8 +89,9 @@ public class machineGun : weapon
 {
     public machineGun()
     {
-        shootTimer = 0.1f + Time.deltaTime;
-        coolDownTime = 1;
+        config.name = "machineGun";
+        config.shootTimer = 0.1f;
+        config.coolDownTime = 0.1f;
     }
 }
 
@@ -89,8 +99,8 @@ public class rocketLauncher : weapon
 {
     public rocketLauncher()
     {
-        //shootTimer
-        //coolDownTime
-        //bullet prefab
+        config.name = "rocketLauncher";
+        config.shootTimer = 0.1f;
+        config.coolDownTime = 0.8f;
     }
 }

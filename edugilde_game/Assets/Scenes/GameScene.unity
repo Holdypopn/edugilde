@@ -190,6 +190,18 @@ PrefabInstance:
       propertyPath: gunshot
       value: 
       objectReference: {fileID: 8300000, guid: 2d4d294f322bc35408841a49ac4d6dee, type: 3}
+    - target: {fileID: 874093429267962367, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: pistolProjectile
+      value: 
+      objectReference: {fileID: 2063113926203408281, guid: 45f056c0bdae57a438ded9221e41280e, type: 3}
+    - target: {fileID: 874093429267962367, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: rocketProjectile
+      value: 
+      objectReference: {fileID: 2661391444255134493, guid: 501e8116024a95b4fa557035937e8887, type: 3}
+    - target: {fileID: 874093429267962367, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: machineGunProjectile
+      value: 
+      objectReference: {fileID: 3962460279500769492, guid: 8cea6518062aed34888918f2c6394dbc, type: 3}
     - target: {fileID: 1262484713340390003, guid: ffe645025df29944db904e8e11b228b4, type: 3}
       propertyPath: cam
       value: 
