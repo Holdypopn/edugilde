@@ -56,14 +56,12 @@ public class playerHandling : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("lifeDrop"))
         {
-            Debug.Log("HALLO KOMMEN WIRT HIER HABPSID");
-
+            Destroy(collision.gameObject);
             if(lives < 3)
             {
+                lifePics.transform.GetChild(lives).gameObject.SetActive(true);
                 lives++;
-                lifePics.transform.GetChild(lifePics.transform.childCount).gameObject.SetActive(true);
             }
-            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag.Equals("enemyBullet") || collision.gameObject.tag.Equals("suicideEnemy") || collision.gameObject.tag.Equals("enemy1"))
