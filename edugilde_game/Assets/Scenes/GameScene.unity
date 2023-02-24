@@ -195,6 +195,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1586617725}
     - target: {fileID: 1262484713340390003, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: lifeDrop
+      value: 
+      objectReference: {fileID: 5090934639614635371, guid: 43fa13940057ee143b7778213d44565d, type: 3}
+    - target: {fileID: 1262484713340390003, guid: ffe645025df29944db904e8e11b228b4, type: 3}
       propertyPath: lifePics
       value: 
       objectReference: {fileID: 1647835985}
@@ -424,7 +428,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1647835986}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906486538
 GameObject:
@@ -1100,9 +1104,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2027552566}
-  - {fileID: 1948584252}
   - {fileID: 879484104}
+  - {fileID: 1948584252}
+  - {fileID: 2027552566}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1426,5 +1430,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1647835986}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

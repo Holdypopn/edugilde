@@ -11,8 +11,9 @@ public class playerHandling : MonoBehaviour
     private Vector3 stageDimensions;
     private float xBorder;
     private float yBorder;
-    public int lives= 3;
+    public int lives = 3;
     public GameObject lifePics;
+    public GameObject lifeDrop;
     
 
     // Start is called before the first frame update
@@ -48,11 +49,23 @@ public class playerHandling : MonoBehaviour
 
     void DeleteLifePic()
     {
-        Destroy(lifePics.transform.GetChild(0).gameObject);
+        lifePics.transform.GetChild(lives).gameObject.SetActive(false);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag.Equals("lifeDrop"))
+        {
+            Debug.Log("HALLO KOMMEN WIRT HIER HABPSID");
+
+            if(lives < 3)
+            {
+                lives++;
+                lifePics.transform.GetChild(lifePics.transform.childCount).gameObject.SetActive(true);
+            }
+            Destroy(collision.gameObject);
+        }
+
         if (collision.gameObject.tag.Equals("enemyBullet") || collision.gameObject.tag.Equals("suicideEnemy") || collision.gameObject.tag.Equals("enemy1"))
         {
             Destroy(collision.gameObject);

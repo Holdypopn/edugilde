@@ -6,6 +6,7 @@ public class suicideEnemyHandling : MonoBehaviour
 {
     private GameObject target;
     public float speed = 10;
+    public GameObject lifeDrop;
 
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class suicideEnemyHandling : MonoBehaviour
         if (collision.gameObject.tag.Equals("bullet"))
         {
             scoreScript.scoreValue += 15;
+            Instantiate(lifeDrop, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

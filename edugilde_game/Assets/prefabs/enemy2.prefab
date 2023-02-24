@@ -222,3 +222,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  lifeDrop: {fileID: 5090934639614635371, guid: 43fa13940057ee143b7778213d44565d, type: 3}
