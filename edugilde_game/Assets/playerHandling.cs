@@ -11,6 +11,7 @@ public class playerHandling : MonoBehaviour
     private float xBorder;
     private float yBorder;
     public int lives= 3;
+    public GameObject lifePics;
     
 
     // Start is called before the first frame update
@@ -44,12 +45,18 @@ public class playerHandling : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -yBorder, 0);
     }
 
+    void DeleteLifePic()
+    {
+        Destroy(lifePics.transform.GetChild(0).gameObject);
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("enemyBullet") || collision.gameObject.tag.Equals("suicideEnemy") || collision.gameObject.tag.Equals("enemy1"))
         {
             Destroy(collision.gameObject);
             lives--;
+            DeleteLifePic();
 
             if (lives <= 0)
             {    
