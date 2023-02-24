@@ -10,6 +10,7 @@ public class playerHandling : MonoBehaviour
     private Vector3 stageDimensions;
     private float xBorder;
     private float yBorder;
+    public int lives= 3;
     
 
     // Start is called before the first frame update
@@ -48,7 +49,13 @@ public class playerHandling : MonoBehaviour
         if (collision.gameObject.tag.Equals("enemyBullet") || collision.gameObject.tag.Equals("suicideEnemy") || collision.gameObject.tag.Equals("enemy1"))
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            lives--;
+
+            if (lives <= 0)
+            {    
+                Destroy(gameObject);
+                //GameOver screen
+            }            
         }
     }
 }
