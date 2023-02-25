@@ -29,8 +29,8 @@ public class scoreScript : MonoBehaviour
 
     void OnDisable()
     {
-        Debug.Log("ONDISABLE");
-        PlayerPrefs.SetInt("score", scoreValue);
+        if(scoreValue > PlayerPrefs.GetInt("score"))
+            PlayerPrefs.SetInt("score", scoreValue);
     }
 
 }
