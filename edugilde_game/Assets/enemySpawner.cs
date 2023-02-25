@@ -70,6 +70,11 @@ public class enemySpawner : MonoBehaviour
             respawnTime1 = 1;
             respawnTime2 = 4;
         }
+        if(scoreScript.scoreValue >= 800)
+        {
+            respawnTime1 = 99999999999;
+            respawnTime2 = 99999999999;
+        }
     }
     
 }
