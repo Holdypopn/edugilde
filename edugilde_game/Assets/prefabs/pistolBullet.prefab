@@ -118,6 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 14
   direction: {x: 0, y: 1}
+  rigidBody: {fileID: 0}
+  angleChangingSpeed: 3
 --- !u!82 &157679568953622487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -128,7 +130,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7249712190642515786, guid: 0167a90f6695796498f34f2ec7858850, type: 2}
-  m_audioClip: {fileID: 8300000, guid: d41f186fd52cd37429f46bf70c7b9f1b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

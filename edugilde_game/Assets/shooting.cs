@@ -12,6 +12,9 @@ public class shooting : MonoBehaviour
     private machineGun machineGun;
     private rocketLauncher rocketLauncher;
     private Config config;
+    public AudioClip gunshot;
+    public AudioClip machinegunShot;
+    public AudioClip rocketShot;
     
 
     // Start is called before the first frame update
@@ -55,6 +58,19 @@ public class shooting : MonoBehaviour
         {
             config.shootTimer = 0;
             Instantiate(config.projectile, gun.position, Quaternion.identity);
+
+            if(config.projectile == pistolProjectile)
+            {
+            AudioSource.PlayClipAtPoint(gunshot, transform.position);
+            }
+            if(config.projectile == machineGunProjectile)
+            {
+            AudioSource.PlayClipAtPoint(machinegunShot, transform.position);
+            }
+            if(config.projectile == rocketProjectile)
+            {
+            AudioSource.PlayClipAtPoint(rocketShot, transform.position);
+            }
         }
     }
 }
