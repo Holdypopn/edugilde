@@ -9,12 +9,14 @@ public class suicideEnemyHandling : MonoBehaviour
     public GameObject lifeDrop;
     private Animator anim;
     public AudioClip deathClip;
+    public CapsuleCollider2D capsuleCollider2D;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindWithTag("player");
         anim = GetComponent<Animator>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class suicideEnemyHandling : MonoBehaviour
         
         if (collision.gameObject.tag.Equals("bullet") || collision.gameObject.tag.Equals("pistolBullet") || collision.gameObject.tag.Equals("rocket"))
         {
+            capsuleCollider2D.enabled = false;
             anim.SetTrigger("onDeath");
             speed = 0;
             scoreScript.scoreValue += 15;
@@ -45,6 +48,7 @@ public class suicideEnemyHandling : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("player"))
         {
+            capsuleCollider2D.enabled = false;
             anim.SetTrigger("onDeath");
             AudioSource.PlayClipAtPoint(deathClip, transform.position);
             Destroy(gameObject, 0.25f);
