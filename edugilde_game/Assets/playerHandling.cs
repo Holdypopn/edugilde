@@ -7,19 +7,30 @@ using UnityEngine.UI;
 public class playerHandling : MonoBehaviour
 {
     public float speed = 12;
-    private Rigidbody2D Player;
+    private Rigidbody2D rb;
     private Vector3 stageDimensions;
     private float xBorder;
     private float yBorder;
     public int lives = 3;
     public GameObject lifePics;
     public GameObject lifeDrop;
-    
+
+
+    private float activeMoveSpeed;
+    public float dashSpeed;
+    public float dashLength = .5f;
+    public float dashCooldown = 1f;
+    private float dashCounter;
+    private float dashCoolDownCounter;
+
+    private Vector2 moveInput;
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+
+        activeMoveSpeed = speed;
 
         stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         // Could change the "1" to half player size
@@ -31,9 +42,37 @@ public class playerHandling : MonoBehaviour
     void Update()
     {
         // Player Input Movement
-        var horizontalInput = Input.GetAxis("Horizontal") * speed;
-        var verticalInput = Input.GetAxis("Vertical") * speed;
-        Player.velocity = new Vector2(horizontalInput, verticalInput);
+        moveInput.x = Input.GetAxis("Horizontal");
+        moveInput.y = Input.GetAxis("Vertical") ;
+        moveInput.Normalize();
+
+        rb.velocity = moveInput * activeMoveSpeed;
+
+        // Dash Handling
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if(dashCoolDownCounter <= 0 && dashCounter <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+            }
+        }
+
+        if(dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+
+            if(dashCounter <= 0)
+            {
+                activeMoveSpeed = speed;
+                dashCoolDownCounter = dashCooldown;
+            }
+        }
+
+        if(dashCoolDownCounter > 0)
+            dashCoolDownCounter -= Time.deltaTime;
+
+
 
         // Player movement restrictions (borders)
         if(transform.position.x > xBorder)
