@@ -22,9 +22,15 @@ public class scoreScript : MonoBehaviour
     {
         scoreText.text = "Score " + scoreValue;
 
-    // Brings player to Menu while ingame    
-    if(Input.GetKey(KeyCode.Escape))
-    SceneManager.LoadScene(MenuScene);    
+        // Brings player to Menu while ingame    
+        if(Input.GetKey(KeyCode.Escape))
+            SceneManager.LoadScene(MenuScene);    
+    }
+
+    void OnDisable()
+    {
+        if(scoreValue > PlayerPrefs.GetInt("score"))
+            PlayerPrefs.SetInt("score", scoreValue);
     }
 
 }
