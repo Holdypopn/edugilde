@@ -15,7 +15,7 @@ public class playerHandling : MonoBehaviour
     public GameObject lifePics;
     public GameObject lifeDrop;
 
-
+    private bool isMoving;
     private float activeMoveSpeed;
     public float dashSpeed;
     public float dashLength;
@@ -42,9 +42,8 @@ public class playerHandling : MonoBehaviour
     void Update()
     {
         // Player Input Movement
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical") ;
-        moveInput.Normalize();
+        moveInput.x = Input.GetAxis("Horizontal");
+        moveInput.y = Input.GetAxis("Vertical");
 
         rb.velocity = moveInput * activeMoveSpeed;
 
