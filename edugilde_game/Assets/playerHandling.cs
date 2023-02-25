@@ -22,8 +22,9 @@ public class playerHandling : MonoBehaviour
     public float dashCooldown;
     private float dashCounter;
     private float dashCoolDownCounter;
-
+    private Animator anim;
     private Vector2 moveInput;
+    public AudioClip deathClip;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class playerHandling : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         activeMoveSpeed = speed;
+        anim = GetComponent<Animator>();
 
         stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         // Could change the "1" to half player size
@@ -121,9 +123,12 @@ public class playerHandling : MonoBehaviour
             DeleteLifePic();
 
             if (lives <= 0)
-            {    
-                Destroy(gameObject);
-                SceneManager.LoadScene(0); //Loads Main Menu
+            {   
+                anim.SetTrigger("onDeath");
+                speed = 0; 
+                AudioSource.PlayClipAtPoint(deathClip, transform.position);
+                Destroy(gameObject, 0.25f);
+                //SceneManager.LoadScene(0); //Loads Main Menu
             }            
         }
     }

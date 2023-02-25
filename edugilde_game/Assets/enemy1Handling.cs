@@ -14,7 +14,6 @@ public class enemy1Handling : MonoBehaviour
     private Animator anim;
     public AudioClip deathClip;
     public AudioClip enemy1Shot;
-    public CircleCollider2D circleCollider;
     
     void OnBecameInvisible() 
     {
@@ -33,9 +32,7 @@ public class enemy1Handling : MonoBehaviour
         {
             direction = false;
         }
-
         anim = GetComponent<Animator>();
-        circleCollider = GetComponent<CircleCollider2D>();
 
     }
 
@@ -59,13 +56,12 @@ public class enemy1Handling : MonoBehaviour
         {
             transform.Translate(speed * Time.deltaTime * Vector2.left);
         }
-        
+    
     }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag.Equals("bullet") || col.gameObject.tag.Equals("pistolBullet") || col.gameObject.tag.Equals("rocket"))
         {
-            circleCollider.enabled = false;
             scoreScript.scoreValue += 10;
 
             Destroy(col.gameObject);
@@ -77,7 +73,6 @@ public class enemy1Handling : MonoBehaviour
 
         if (col.gameObject.tag.Equals("player"))
         {
-            circleCollider.enabled = false;
             anim.SetTrigger("onDeath");
             speed = 0;
             AudioSource.PlayClipAtPoint(deathClip, transform.position);
