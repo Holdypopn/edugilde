@@ -17,8 +17,6 @@ public class shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        config = new Config();
-
         pistol = new pistol();
         pistol.config.projectile = pistolProjectile;
         
@@ -27,23 +25,26 @@ public class shooting : MonoBehaviour
 
         rocketLauncher = new rocketLauncher();
         rocketLauncher.config.projectile = rocketProjectile;
+
+        config = new Config();
+        config = pistol.getShootingConfig();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             config = pistol.getShootingConfig();
         }
 
-        if(Input.GetKey(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             config = machineGun.getShootingConfig();
         }
 
-        if(Input.GetKey(KeyCode.Alpha3))
+        if(Input.GetKeyDown(KeyCode.Alpha3))
         {
             config = rocketLauncher.getShootingConfig();
         }
