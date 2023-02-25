@@ -105,6 +105,8 @@ public class playerHandling : MonoBehaviour
         if (col.gameObject.tag.Equals("laser"))
         {;
             lives--;
+            DeleteLifePic();
+            
             if (lives <= 0)
             {    
                 Destroy(gameObject);
