@@ -13,6 +13,7 @@ TagManager:
   - lifeDrop
   - pistolBullet
   - rocket
+  - boss
   layers:
   - Default
   - TransparentFX
