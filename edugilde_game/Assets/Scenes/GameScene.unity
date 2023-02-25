@@ -1179,6 +1179,7 @@ MonoBehaviour:
   respawnTime1: 2.8
   respawnTime2: 12
   cam: {fileID: 1586617725}
+  textMesh: {fileID: 1642849576}
 --- !u!4 &1889501007
 Transform:
   m_ObjectHideFlags: 0

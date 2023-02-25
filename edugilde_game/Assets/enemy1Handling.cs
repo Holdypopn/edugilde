@@ -11,6 +11,7 @@ public class enemy1Handling : MonoBehaviour
     public GameObject enemyBullet;
     public float coolDownTime = 5;
     private float shootTimer;
+    private Animator anim;
     
     void OnBecameInvisible() 
     {
@@ -28,7 +29,8 @@ public class enemy1Handling : MonoBehaviour
         else
         {
             direction = false;
-        }    
+        }
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -59,12 +61,16 @@ public class enemy1Handling : MonoBehaviour
             scoreScript.scoreValue += 10;
 
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            anim.SetTrigger("onDeath");
+            speed = 0;
+            Destroy(gameObject, 0.25f);
         }
 
         if (collision.gameObject.tag.Equals("player"))
         {
-            Destroy(gameObject);
+            anim.SetTrigger("onDeath");
+            speed = 0;
+            Destroy(gameObject, 0.25f);
         }
         
     }

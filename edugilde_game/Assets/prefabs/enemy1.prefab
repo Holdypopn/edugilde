@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6567680807312389697}
   - component: {fileID: 3046532135089301713}
   - component: {fileID: 2373393761995561740}
+  - component: {fileID: 1451678532002494609}
   m_Layer: 0
   m_Name: enemy1
   m_TagString: enemy1
@@ -173,3 +174,23 @@ MonoBehaviour:
   enemy1Gun: {fileID: 4703873358468264481}
   enemyBullet: {fileID: 3962460279500769492, guid: 7f6bfdff56419c640a62cff735f68dce, type: 3}
   coolDownTime: 1
+--- !u!95 &1451678532002494609
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8839780839974624775}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8d884a97ee01a640bd6986d70077757, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
