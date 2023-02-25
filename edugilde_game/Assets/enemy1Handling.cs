@@ -12,6 +12,7 @@ public class enemy1Handling : MonoBehaviour
     public float coolDownTime = 5;
     private float shootTimer;
     private Animator anim;
+    public AudioClip deathClip;
     
     void OnBecameInvisible() 
     {
@@ -31,6 +32,7 @@ public class enemy1Handling : MonoBehaviour
             direction = false;
         }
         anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -63,6 +65,7 @@ public class enemy1Handling : MonoBehaviour
             Destroy(collision.gameObject);
             anim.SetTrigger("onDeath");
             speed = 0;
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
             Destroy(gameObject, 0.25f);
         }
 
@@ -70,6 +73,7 @@ public class enemy1Handling : MonoBehaviour
         {
             anim.SetTrigger("onDeath");
             speed = 0;
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
             Destroy(gameObject, 0.25f);
         }
         

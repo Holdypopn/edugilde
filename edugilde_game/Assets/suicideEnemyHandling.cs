@@ -7,12 +7,14 @@ public class suicideEnemyHandling : MonoBehaviour
     private GameObject target;
     public float speed = 10;
     public GameObject lifeDrop;
-
+    private Animator anim;
+    public AudioClip deathClip;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindWithTag("player");
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,15 +34,20 @@ public class suicideEnemyHandling : MonoBehaviour
         
         if (collision.gameObject.tag.Equals("bullet") || collision.gameObject.tag.Equals("pistolBullet") || collision.gameObject.tag.Equals("rocket"))
         {
+            anim.SetTrigger("onDeath");
+            speed = 0;
             scoreScript.scoreValue += 15;
             Instantiate(lifeDrop, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
+            Destroy(gameObject, 0.25f);
         }
 
         if (collision.gameObject.tag.Equals("player"))
         {
-            Destroy(gameObject);
+            anim.SetTrigger("onDeath");
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
+            Destroy(gameObject, 0.25f);
         }
         
     }
