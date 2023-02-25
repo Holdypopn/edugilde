@@ -176,6 +176,7 @@ MonoBehaviour:
   enemyBullet: {fileID: 3962460279500769492, guid: 7f6bfdff56419c640a62cff735f68dce, type: 3}
   coolDownTime: 1
   deathClip: {fileID: 8300000, guid: b7674ff29ca530541a68e95233c103a5, type: 3}
+  enemy1Shot: {fileID: 8300000, guid: 4b1ceab74f2377d4e8ca4be2e56a1ad3, type: 3}
 --- !u!95 &1451678532002494609
 Animator:
   serializedVersion: 5

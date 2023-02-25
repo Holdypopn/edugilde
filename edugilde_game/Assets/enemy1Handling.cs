@@ -13,6 +13,7 @@ public class enemy1Handling : MonoBehaviour
     private float shootTimer;
     private Animator anim;
     public AudioClip deathClip;
+    public AudioClip enemy1Shot;
     
     void OnBecameInvisible() 
     {
@@ -44,6 +45,7 @@ public class enemy1Handling : MonoBehaviour
         {
             shootTimer = 0;
             Instantiate(enemyBullet, enemy1Gun.position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(enemy1Shot, transform.position);
         }
 
         if(direction == true)
