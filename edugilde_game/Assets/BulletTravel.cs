@@ -29,39 +29,10 @@ public class BulletTravel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.tag.Equals("rocket"))
-        {
-            /*var enemy1List = GameObject.FindGameObjectsWithTag("enemy1");
-            var suicideEnemyList = GameObject.FindGameObjectsWithTag("suicideEnemy");
-            
-            List<Transform> enemies = new List<Transform>();
 
-            foreach (var item in enemy1List)
-            {
-                enemies.Add(item.transform);
-            }
-            foreach (var item in suicideEnemyList)
-            {
-                enemies.Add(item.transform);
-            }
-
-            var target = GetClosestEnemy(enemies);
-
-            Debug.Log("TARGET: " + target.name);
-            Debug.Log("TARGET POS: " + target.transform.position);
-
-            Vector2 dir = new Vector2();
-            dir.x = target.position.x;
-            dir.y = target.position.y;
-
-            transform.Translate(speed * Time.deltaTime * dir);*/
-        }
-        else
-        {
-            //transform.Translate(speed * Time.deltaTime * direction);
-        }
     }
 
+    // Called 50 times per second -> better when handling physic objects
     void FixedUpdate ()
 	{
         if(gameObject.tag.Equals("rocket"))
