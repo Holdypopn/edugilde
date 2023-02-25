@@ -101,6 +101,17 @@ public class playerHandling : MonoBehaviour
                 lives++;
             }
         }
+
+        if (col.gameObject.tag.Equals("laser"))
+        {
+            Debug.Log("CHARGEDALASER");
+            lives--;
+            if (lives <= 0)
+            {    
+                Destroy(gameObject);
+                SceneManager.LoadScene(0); //Loads Main Menu
+            } 
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

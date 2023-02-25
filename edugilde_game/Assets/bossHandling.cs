@@ -10,6 +10,7 @@ public class bossHandling : MonoBehaviour
     public GameObject enemyBullet;
     public Transform cannonLeft;
     public Transform cannonRight;
+    public Transform laserGunPos;
     public GameObject laserGun;
 
     private float xBorder;
@@ -71,7 +72,9 @@ public class bossHandling : MonoBehaviour
         {
             laserFireRate = Random.Range(2, 4);
             laserCanFire = Time.time + laserFireRate;
-            laserGun.SetActive(true);
+            GameObject bossGigaLaser = Instantiate(laserGun, laserGunPos.position, Quaternion.identity);
+            bossGigaLaser.transform.parent = transform;
+            Destroy(bossGigaLaser, 1);
         }
     }
 }
