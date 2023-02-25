@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 874093429267962362}
   - component: {fileID: 874093429267962363}
   - component: {fileID: -1105442958849771987}
-  - component: {fileID: 3399157779993331390}
   - component: {fileID: 874093429267962367}
   - component: {fileID: 1262484713340390003}
+  - component: {fileID: 2421326148300115995}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: player
@@ -141,23 +141,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!70 &3399157779993331390
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874093429267961860}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.007474987, y: 0.053956755}
-  m_Size: {x: 1.116052, y: 1.1079137}
-  m_Direction: 0
+  m_Constraints: 4
 --- !u!114 &874093429267962367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,8 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 874093428822499927}
-  bullet: {fileID: 3962460279500769492, guid: 8cea6518062aed34888918f2c6394dbc, type: 3}
-  coolDownTime: 0.1
+  pistolProjectile: {fileID: 2063113926203408281, guid: 45f056c0bdae57a438ded9221e41280e, type: 3}
+  machineGunProjectile: {fileID: 3962460279500769492, guid: 8cea6518062aed34888918f2c6394dbc, type: 3}
+  rocketProjectile: {fileID: 2661391444255134493, guid: 501e8116024a95b4fa557035937e8887, type: 3}
 --- !u!114 &1262484713340390003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +173,41 @@ MonoBehaviour:
   speed: 12
   lives: 3
   lifePics: {fileID: 0}
-  lifeDrop: {fileID: 0}
+  lifeDrop: {fileID: 5090934639614635371, guid: 43fa13940057ee143b7778213d44565d, type: 3}
+--- !u!68 &2421326148300115995
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874093429267961860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.25720727, y: 0.1405743}
+  - {x: -0.18857692, y: 0.3253161}
+  - {x: -0.08425561, y: 0.5610721}
+  - {x: 0.09573118, y: 0.5607852}
+  - {x: 0.24721368, y: 0.1307284}
+  - {x: 0.8727995, y: -0.20954043}
+  - {x: 0.87129056, y: -0.32478005}
+  - {x: 0.41128385, y: -0.27504838}
+  - {x: 0.39414316, y: -0.4904601}
+  - {x: -0.4114825, y: -0.4904601}
+  - {x: -0.4200529, y: -0.24499096}
+  - {x: -0.8142952, y: -0.34017265}
+  - {x: -0.88285893, y: -0.22996174}
+  - {x: -0.2486441, y: 0.14575654}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: -0.13, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &9122558756883887548
 GameObject:
   m_ObjectHideFlags: 0
