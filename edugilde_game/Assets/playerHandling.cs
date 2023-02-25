@@ -103,8 +103,7 @@ public class playerHandling : MonoBehaviour
         }
 
         if (col.gameObject.tag.Equals("laser"))
-        {
-            Debug.Log("CHARGEDALASER");
+        {;
             lives--;
             if (lives <= 0)
             {    
@@ -112,13 +111,10 @@ public class playerHandling : MonoBehaviour
                 SceneManager.LoadScene(0); //Loads Main Menu
             } 
         }
-    }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("enemyBullet") || collision.gameObject.tag.Equals("suicideEnemy") || collision.gameObject.tag.Equals("enemy1"))
+        if (col.gameObject.tag.Equals("enemyBullet") || col.gameObject.tag.Equals("suicideEnemy") || col.gameObject.tag.Equals("enemy1"))
         {
-            Destroy(collision.gameObject);
+            Destroy(col.gameObject);
             lives--;
             DeleteLifePic();
 

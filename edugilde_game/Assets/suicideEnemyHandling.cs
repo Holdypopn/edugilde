@@ -31,22 +31,22 @@ public class suicideEnemyHandling : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D col)
     {
         
-        if (collision.gameObject.tag.Equals("bullet") || collision.gameObject.tag.Equals("pistolBullet") || collision.gameObject.tag.Equals("rocket"))
+        if (col.gameObject.tag.Equals("bullet") || col.gameObject.tag.Equals("pistolBullet") || col.gameObject.tag.Equals("rocket"))
         {
             capsuleCollider2D.enabled = false;
             anim.SetTrigger("onDeath");
             speed = 0;
             scoreScript.scoreValue += 15;
             Instantiate(lifeDrop, transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
+            Destroy(col.gameObject);
             AudioSource.PlayClipAtPoint(deathClip, transform.position);
             Destroy(gameObject, 0.25f);
         }
 
-        if (collision.gameObject.tag.Equals("player"))
+        if (col.gameObject.tag.Equals("player"))
         {
             capsuleCollider2D.enabled = false;
             anim.SetTrigger("onDeath");

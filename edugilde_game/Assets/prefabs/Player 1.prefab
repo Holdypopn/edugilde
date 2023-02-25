@@ -158,6 +158,9 @@ MonoBehaviour:
   pistolProjectile: {fileID: 2063113926203408281, guid: 45f056c0bdae57a438ded9221e41280e, type: 3}
   machineGunProjectile: {fileID: 3962460279500769492, guid: 8cea6518062aed34888918f2c6394dbc, type: 3}
   rocketProjectile: {fileID: 2661391444255134493, guid: 501e8116024a95b4fa557035937e8887, type: 3}
+  gunshot: {fileID: 0}
+  machinegunShot: {fileID: 0}
+  rocketShot: {fileID: 0}
 --- !u!114 &1262484713340390003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +177,9 @@ MonoBehaviour:
   lives: 3
   lifePics: {fileID: 0}
   lifeDrop: {fileID: 5090934639614635371, guid: 43fa13940057ee143b7778213d44565d, type: 3}
+  dashSpeed: 0
+  dashLength: 0
+  dashCooldown: 0
 --- !u!68 &2421326148300115995
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -184,7 +190,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

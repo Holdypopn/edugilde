@@ -247,6 +247,14 @@ PrefabInstance:
       propertyPath: dashCooldown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2421326148300115995, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421326148300115995, guid: ffe645025df29944db904e8e11b228b4, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4579548289815341971, guid: ffe645025df29944db904e8e11b228b4, type: 3}
       propertyPath: m_Volume
       value: 0.189
@@ -1717,12 +1725,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1152712865724386986, guid: 92d3e583fe4f1d449b772d110ffaf951, type: 3}
-      propertyPath: m_LocalPosition.x
+      propertyPath: m_LocalScale.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1152712865724386986, guid: 92d3e583fe4f1d449b772d110ffaf951, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152712865724386986, guid: 92d3e583fe4f1d449b772d110ffaf951, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152712865724386986, guid: 92d3e583fe4f1d449b772d110ffaf951, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.83
+      value: -10.97
       objectReference: {fileID: 0}
     - target: {fileID: 1152712865724386986, guid: 92d3e583fe4f1d449b772d110ffaf951, type: 3}
       propertyPath: m_LocalPosition.z
