@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 public class BulletTravel : MonoBehaviour
 {   
@@ -51,18 +53,25 @@ public class BulletTravel : MonoBehaviour
                 enemies.Add(item.transform);
             }
 
-            var target = GetClosestEnemy(enemies);
+            if(enemies.Any())
+            {
+                var target = GetClosestEnemy(enemies);
 
-            Vector2 direction = (Vector2)target.position - (Vector2)transform.position;
-            angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-            transform.rotation = Quaternion.Euler (0f, 0f, angle);
-            lastPosition = transform.position;
-            if (Vector2.Distance(((Vector2)target.position), rigidBody.position) >= 1.0f)
+                Vector2 direction = (Vector2)target.position - (Vector2)transform.position;
+                angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+                transform.rotation = Quaternion.Euler (0f, 0f, angle);
+                lastPosition = transform.position;
+                if (Vector2.Distance(((Vector2)target.position), rigidBody.position) >= 1.0f)
+                {
+                    rigidBody.velocity = transform.up * speed;
+                } else
+                {
+                    rigidBody.velocity = -1 * transform.up * speed;
+                }
+            }
+            else
             {
-                rigidBody.velocity = transform.up * speed;
-            } else
-            {
-                rigidBody.velocity = -1 * transform.up * speed;
+                transform.Translate(speed * Time.deltaTime * direction);
             }
         }
         else
