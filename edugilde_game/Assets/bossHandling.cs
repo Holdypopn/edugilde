@@ -12,6 +12,7 @@ public class bossHandling : MonoBehaviour
     public Transform cannonRight;
     public Transform laserGunPos;
     public GameObject laserGun;
+    public int bossScoreTrigger = 200;
 
     private float xBorder;
     private float yBorder;
@@ -23,7 +24,7 @@ public class bossHandling : MonoBehaviour
     private float minDist = -10;
     private float shootTimer;
     private float laserFireRate;
-    private float laserCanFire = 2;
+    private float laserCanFire = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -37,44 +38,66 @@ public class bossHandling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y > 18)
-            transform.Translate(moveSpeed * Time.deltaTime * Vector2.down);
-        else
+        if(scoreScript.scoreValue >= bossScoreTrigger)
         {
-            switch (direction)
+            if(transform.position.y > 18)
+                transform.Translate(moveSpeed * Time.deltaTime * Vector2.down);
+            else
             {
-                case true:
-                    if(transform.position.x > minDist)
-                        rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-                    else
-                        direction = false;
-                    break;
-                case false:
-                    if(transform.position.x < maxDist)
-                        rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-                    else
-                        direction = true;
-                    break;
-                default:
+                switch (direction)
+                {
+                    case true:
+                        if(transform.position.x > minDist)
+                            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+                        else
+                            direction = false;
+                        break;
+                    case false:
+                        if(transform.position.x < maxDist)
+                            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+                        else
+                            direction = true;
+                        break;
+                    default:
+                }
+            }
+
+            shootTimer += Time.deltaTime;
+
+            if(shootTimer > cannonCoolDownTime)
+            {
+                shootTimer = 0;
+                Instantiate(enemyBullet, cannonLeft.position, Quaternion.identity);
+                Instantiate(enemyBullet, cannonRight.position, Quaternion.identity);
+            }
+
+            if(transform.position.y <= 18)
+            {
+                if(Time.time > laserCanFire)
+                {
+                    laserFireRate = Random.Range(2, 4);
+                    laserCanFire = Time.time + laserFireRate;
+                    GameObject bossGigaLaser = Instantiate(laserGun, laserGunPos.position, Quaternion.identity);
+                    bossGigaLaser.transform.parent = transform;
+                    Destroy(bossGigaLaser, 1);
+                }
             }
         }
+    }
 
-        shootTimer += Time.deltaTime;
-
-        if(shootTimer > cannonCoolDownTime)
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag.Equals("bullet") || col.gameObject.tag.Equals("pistolBullet") || col.gameObject.tag.Equals("rocket"))
         {
-            shootTimer = 0;
-            Instantiate(enemyBullet, cannonLeft.position, Quaternion.identity);
-            Instantiate(enemyBullet, cannonRight.position, Quaternion.identity);
-        }
+            lives--;
+            Destroy(col.gameObject);
 
-        if(Time.time > laserCanFire)
-        {
-            laserFireRate = Random.Range(2, 4);
-            laserCanFire = Time.time + laserFireRate;
-            GameObject bossGigaLaser = Instantiate(laserGun, laserGunPos.position, Quaternion.identity);
-            bossGigaLaser.transform.parent = transform;
-            Destroy(bossGigaLaser, 1);
+            if(lives <= 0)
+            {
+                scoreScript.scoreValue += 500;
+                moveSpeed = 0;
+                Destroy(gameObject, 1);
+            }
         }
     }
 }

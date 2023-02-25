@@ -52,6 +52,8 @@ public class BulletTravel : MonoBehaviour
             {
                 enemies.Add(item.transform);
             }
+            var boss = GameObject.FindGameObjectsWithTag("boss");
+            enemies.Add(boss[0].transform);
 
             if(enemies.Any())
             {
