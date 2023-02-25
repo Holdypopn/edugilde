@@ -10,6 +10,9 @@ TagManager:
   - suicideEnemy
   - enemy1
   - buttonsound
+  - lifeDrop
+  - pistolBullet
+  - rocket
   layers:
   - Default
   - TransparentFX
