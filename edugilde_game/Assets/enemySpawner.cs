@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class enemySpawner : MonoBehaviour
 {
@@ -9,14 +11,13 @@ public class enemySpawner : MonoBehaviour
     public Transform spawnTop;
     public GameObject enemy1;
     public GameObject enemy2;
-    public float respawnTime1 = 3;
+    public float respawnTime1 = 2.8f;
     public float respawnTime2 = 15;
     private float respawnCooldown1 = 0;
     private float respawnCooldown2 = 0;
     public Camera cam;
-    float delayAndSpawnRate = 2;
-    float timeUntilSpawnRateIncrease = 30;
-    
+    public TextMeshProUGUI textMesh;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,27 @@ public class enemySpawner : MonoBehaviour
     {
         respawnCooldown1 = Spawner(respawnCooldown1, respawnTime1, enemy1);
         respawnCooldown2 = Spawner(respawnCooldown2, respawnTime2, enemy2);
+        
+        if(scoreScript.scoreValue >= 100)
+        {
+            respawnTime1 = 2.4f;
+            respawnTime2 = 12;
+        }
+        if(scoreScript.scoreValue >= 300)
+        {
+            respawnTime1 = 2;
+            respawnTime2 = 9;
+        }
+        if(scoreScript.scoreValue >= 500)
+        {
+            respawnTime1 = 1.5f;
+            respawnTime2 = 7;
+        }
+        if(scoreScript.scoreValue >= 800)
+        {
+            respawnTime1 = 1;
+            respawnTime2 = 4;
+        }
     }
     
 }
