@@ -744,7 +744,7 @@ MonoBehaviour:
   cannonRight: {fileID: 1511798430}
   laserGunPos: {fileID: 7868262}
   laserGun: {fileID: 1152712865724386985, guid: 92d3e583fe4f1d449b772d110ffaf951, type: 3}
-  bossScoreTrigger: 1300
+  bossScoreTrigger: 1500
 --- !u!68 &328803543
 EdgeCollider2D:
   m_ObjectHideFlags: 0
