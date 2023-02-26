@@ -15,6 +15,7 @@ TagManager:
   - rocket
   - boss
   - laser
+  - deathUI
   layers:
   - Default
   - TransparentFX

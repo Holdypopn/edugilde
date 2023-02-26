@@ -14,6 +14,7 @@ public class playerHandling : MonoBehaviour
     public int lives = 3;
     public GameObject lifePics;
     public GameObject lifeDrop;
+    public GameObject deathUI;
 
     private bool isMoving;
     private float activeMoveSpeed;
@@ -103,19 +104,6 @@ public class playerHandling : MonoBehaviour
                 lives++;
             }
         }
-
-        if (col.gameObject.tag.Equals("laser"))
-        {;
-            lives--;
-            DeleteLifePic();
-            
-            if (lives <= 0)
-            {    
-                Destroy(gameObject);
-                SceneManager.LoadScene(0); //Loads Main Menu
-            } 
-        }
-
         if (col.gameObject.tag.Equals("enemyBullet") || col.gameObject.tag.Equals("suicideEnemy") || col.gameObject.tag.Equals("enemy1"))
         {
             Destroy(col.gameObject);
@@ -128,19 +116,21 @@ public class playerHandling : MonoBehaviour
                 speed = 0; 
                 AudioSource.PlayClipAtPoint(deathClip, transform.position);
                 Destroy(gameObject, 0.25f);
-                //SceneManager.LoadScene(0); //Loads Main Menu
+                deathUI.transform.gameObject.SetActive(true);
             }            
         }
         if (col.gameObject.tag.Equals("laser"))
         {
             lives--;
             DeleteLifePic();
+
             if (lives <= 0)
             {
                 anim.SetTrigger("onDeath");
                 speed = 0;
                 AudioSource.PlayClipAtPoint(deathClip, transform.position);
                 Destroy(gameObject, 0.25f);
+                deathUI.transform.gameObject.SetActive(true);
             }
         }
     }

@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8839780839974624775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.142589, y: -0.44473028, z: 0}
+  m_LocalPosition: {x: -14.142589, y: -0.44473028, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -177,7 +177,6 @@ MonoBehaviour:
   coolDownTime: 1
   deathClip: {fileID: 8300000, guid: b7674ff29ca530541a68e95233c103a5, type: 3}
   enemy1Shot: {fileID: 8300000, guid: 4b1ceab74f2377d4e8ca4be2e56a1ad3, type: 3}
-  circleCollider: {fileID: 0}
 --- !u!95 &1451678532002494609
 Animator:
   serializedVersion: 5
