@@ -25,6 +25,7 @@ public class bossHandling : MonoBehaviour
     private float shootTimer;
     private float laserFireRate;
     private float laserCanFire = 1;
+    private bool alreadyCounted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -99,7 +100,11 @@ public class bossHandling : MonoBehaviour
 
             if(lives <= 0)
             {
+                if(!alreadyCounted)
+            {
                 scoreScript.scoreValue += 500;
+                alreadyCounted = true;
+            }
                 moveSpeed = 0;
                 Destroy(gameObject, 1);
             }

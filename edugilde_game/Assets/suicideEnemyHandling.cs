@@ -10,6 +10,7 @@ public class suicideEnemyHandling : MonoBehaviour
     private Animator anim;
     public AudioClip deathClip;
     public CapsuleCollider2D capsuleCollider2D;
+    private bool alreadyCounted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,14 +37,18 @@ public class suicideEnemyHandling : MonoBehaviour
         
         if (col.gameObject.tag.Equals("bullet") || col.gameObject.tag.Equals("pistolBullet") || col.gameObject.tag.Equals("rocket"))
         {
+            if(!alreadyCounted)
+            {
+                scoreScript.scoreValue += 15;
+                alreadyCounted = true;
+            }
             capsuleCollider2D.enabled = false;
             anim.SetTrigger("onDeath");
             speed = 0;
-            scoreScript.scoreValue += 15;
             Instantiate(lifeDrop, transform.position, Quaternion.identity);
             Destroy(col.gameObject);
             AudioSource.PlayClipAtPoint(deathClip, transform.position);
-            Destroy(gameObject, 0.25f);
+            Destroy(gameObject, 0.25f);            
         }
 
         if (col.gameObject.tag.Equals("player"))

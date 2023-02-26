@@ -14,6 +14,7 @@ public class enemy1Handling : MonoBehaviour
     private Animator anim;
     public AudioClip deathClip;
     public AudioClip enemy1Shot;
+    private bool alreadyCounted = false;
     
     void OnBecameInvisible() 
     {
@@ -62,13 +63,17 @@ public class enemy1Handling : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("bullet") || col.gameObject.tag.Equals("pistolBullet") || col.gameObject.tag.Equals("rocket"))
         {
-            scoreScript.scoreValue += 10;
-
+            if(!alreadyCounted)
+            {
+                scoreScript.scoreValue += 10;
+                alreadyCounted = true;
+            }
             Destroy(col.gameObject);
             anim.SetTrigger("onDeath");
             speed = 0;
             AudioSource.PlayClipAtPoint(deathClip, transform.position);
             Destroy(gameObject, 0.25f);
+            
         }
 
         if (col.gameObject.tag.Equals("player"))
