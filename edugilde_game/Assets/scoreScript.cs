@@ -20,11 +20,7 @@ public class scoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score " + scoreValue;
-
-        // Brings player to Menu while ingame    
-        if(Input.GetKey(KeyCode.Escape))
-            SceneManager.LoadScene(MenuScene);    
+        scoreText.text = "Score " + scoreValue;  
     }
 
     void OnDisable()

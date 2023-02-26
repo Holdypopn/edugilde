@@ -9,7 +9,17 @@ public class MenuManager : MonoBehaviour
 {
     public int gameStartScene;
     public int MenuScene;
-    
+
+    void Start()
+    {
+
+    }
+    void Update()
+    {   
+        if(Input.GetKey(KeyCode.Escape))
+        SceneManager.LoadScene(MenuScene);    
+    }
+
     public void QuitGame() 
     {
         Application.Quit();
