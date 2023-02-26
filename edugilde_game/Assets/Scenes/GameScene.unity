@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7868261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -14.49, z: 0}
+  m_LocalPosition: {x: 0.09, y: -14.49, z: -0.5}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 328803538}
   - component: {fileID: 328803542}
   - component: {fileID: 328803541}
-  - component: {fileID: 328803540}
+  - component: {fileID: 328803543}
   m_Layer: 0
   m_Name: boss
   m_TagString: Untagged
@@ -611,7 +611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328803537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 30, z: 0}
+  m_LocalPosition: {x: -0, y: 27.57, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -621,32 +621,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &328803540
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328803537}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.07, y: 15.27}
-    newSize: {x: 15.07, y: 15.27}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 15.07, y: 15.27}
-  m_EdgeRadius: 0
 --- !u!50 &328803541
 Rigidbody2D:
   serializedVersion: 4
@@ -681,7 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  lives: 50
+  lives: 250
   cannonCoolDownTime: 1
   enemyBullet: {fileID: 3962460279500769492, guid: e3c45b01951e83644b517951981ff33b, type: 3}
   cannonLeft: {fileID: 1444402406}
@@ -689,6 +663,58 @@ MonoBehaviour:
   laserGunPos: {fileID: 7868262}
   laserGun: {fileID: 1152712865724386985, guid: 92d3e583fe4f1d449b772d110ffaf951, type: 3}
   bossScoreTrigger: 0
+--- !u!68 &328803543
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328803537}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -7.5569954, y: -5.652975}
+  - {x: -6.6084313, y: -7.5446305}
+  - {x: -6.410468, y: -6.9507384}
+  - {x: -5.266676, y: -7.6546106}
+  - {x: -5.0027227, y: -6.598803}
+  - {x: -4.6507874, y: -6.7747707}
+  - {x: -4.2988505, y: -4.7071476}
+  - {x: -3.8369365, y: -7.2806783}
+  - {x: -3.375019, y: -5.4990025}
+  - {x: -1.7033219, y: -7.6106186}
+  - {x: -1.3293909, y: -6.202873}
+  - {x: -0.8234825, y: -7.324671}
+  - {x: -0.51553774, y: -7.060719}
+  - {x: -0.4275546, y: -6.466826}
+  - {x: -0.14160633, y: -6.7747717}
+  - {x: 0.21033001, y: -6.7307787}
+  - {x: 0.4522848, y: -6.488822}
+  - {x: 0.5622649, y: -7.104709}
+  - {x: 0.8262186, y: -7.324671}
+  - {x: 1.3321257, y: -6.1808786}
+  - {x: 1.7060589, y: -7.6546106}
+  - {x: 3.4437413, y: -5.5869865}
+  - {x: 3.773683, y: -7.3466673}
+  - {x: 4.3015866, y: -4.7071447}
+  - {x: 4.6535234, y: -6.7087836}
+  - {x: 5.093443, y: -6.510818}
+  - {x: 5.2914066, y: -7.6546106}
+  - {x: 6.3472157, y: -6.928742}
+  - {x: 6.6551595, y: -7.500639}
+  - {x: 7.491009, y: -5.455009}
+  - {x: 0.0783546, y: -1.4297404}
+  - {x: -7.576255, y: -5.6969657}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &411921309
 GameObject:
   m_ObjectHideFlags: 0

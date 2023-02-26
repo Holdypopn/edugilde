@@ -83,6 +83,11 @@ public class bossHandling : MonoBehaviour
                 }
             }
         }
+        if (lives == 125)
+        {
+            cannonCoolDownTime = 0.7f;
+            moveSpeed = 12;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
