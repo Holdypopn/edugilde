@@ -12,7 +12,7 @@ public class bossHandling : MonoBehaviour
     public Transform cannonRight;
     public Transform laserGunPos;
     public GameObject laserGun;
-    public int bossScoreTrigger = 200;
+    public int bossScoreTrigger = 1500;
 
     private float xBorder;
     private float yBorder;
