@@ -133,10 +133,15 @@ public class playerHandling : MonoBehaviour
         }
         if (col.gameObject.tag.Equals("laser"))
         {
-            anim.SetTrigger("onDeath");
-            speed = 0;
-            AudioSource.PlayClipAtPoint(deathClip, transform.position);
-            Destroy(gameObject, 0.25f);
+            lives--;
+            DeleteLifePic();
+            if (lives <= 0)
+            {
+                anim.SetTrigger("onDeath");
+                speed = 0;
+                AudioSource.PlayClipAtPoint(deathClip, transform.position);
+                Destroy(gameObject, 0.25f);
+            }
         }
     }
 }
