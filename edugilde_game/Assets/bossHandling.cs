@@ -75,7 +75,7 @@ public class bossHandling : MonoBehaviour
             {
                 if(Time.time > laserCanFire)
                 {
-                    laserFireRate = Random.Range(2, 4);
+                    laserFireRate = Random.Range(2, 5);
                     laserCanFire = Time.time + laserFireRate;
                     GameObject bossGigaLaser = Instantiate(laserGun, laserGunPos.position, Quaternion.identity);
                     bossGigaLaser.transform.parent = transform;

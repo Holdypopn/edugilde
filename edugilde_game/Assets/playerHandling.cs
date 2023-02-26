@@ -131,5 +131,12 @@ public class playerHandling : MonoBehaviour
                 //SceneManager.LoadScene(0); //Loads Main Menu
             }            
         }
+        if (col.gameObject.tag.Equals("laser"))
+        {
+            anim.SetTrigger("onDeath");
+            speed = 0;
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
+            Destroy(gameObject, 0.25f);
+        }
     }
 }
