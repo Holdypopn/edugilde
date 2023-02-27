@@ -4031,7 +4031,7 @@ PrefabInstance:
       objectReference: {fileID: 1083306058}
     - target: {fileID: 4496866137826678978, guid: ad5058880208f714cb23cfcf9ec7a0ce, type: 3}
       propertyPath: bossScoreTrigger
-      value: 1500
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 4496866137826678978, guid: ad5058880208f714cb23cfcf9ec7a0ce, type: 3}
       propertyPath: cannonCoolDownTime

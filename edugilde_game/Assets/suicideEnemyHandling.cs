@@ -39,7 +39,7 @@ public class suicideEnemyHandling : MonoBehaviour
         {
             if(!alreadyCounted)
             {
-                scoreScript.scoreValue += 15;
+                scoreScript.scoreValue += 20;
                 alreadyCounted = true;
             }
             capsuleCollider2D.enabled = false;

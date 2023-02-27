@@ -65,7 +65,7 @@ public class enemy1Handling : MonoBehaviour
         {
             if(!alreadyCounted)
             {
-                scoreScript.scoreValue += 10;
+                scoreScript.scoreValue += 15;
                 alreadyCounted = true;
             }
             Destroy(col.gameObject);
