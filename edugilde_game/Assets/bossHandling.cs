@@ -32,6 +32,7 @@ public class bossHandling : MonoBehaviour
     private float laserCanFire = 1;
     private bool alreadyCounted = false;
     private Animator[] anims;
+    private bool alreadyAnnihilate = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,6 @@ public class bossHandling : MonoBehaviour
 
         initialPosition = transform.position;
         direction = true;
-        AudioSource.PlayClipAtPoint(spawn, transform.position);
         
     }
 
@@ -51,7 +51,14 @@ public class bossHandling : MonoBehaviour
         if(scoreScript.scoreValue >= bossScoreTrigger)
         {
             if(transform.position.y > 18)
+            {
                 transform.Translate(moveSpeed * Time.deltaTime * Vector2.down);
+                if(!alreadyAnnihilate)
+                {
+                    AudioSource.PlayClipAtPoint(spawn, transform.position);
+                    alreadyAnnihilate = true;
+                }
+            }
             else
             {
                 switch (direction)
