@@ -32,7 +32,8 @@ public class bossHandling : MonoBehaviour
     private float laserCanFire = 1;
     private bool alreadyCounted = false;
     private Animator[] anims;
-    private bool alreadyAnnihilate = false;
+    public bool alreadyAnnihilate = false;
+    public static bool bossFight = false;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,7 @@ public class bossHandling : MonoBehaviour
                 {
                     AudioSource.PlayClipAtPoint(spawn, transform.position);
                     alreadyAnnihilate = true;
+                    bossFight = true;
                 }
             }
             else
@@ -120,14 +122,15 @@ public class bossHandling : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(death, transform.position);
                 if(!alreadyCounted)
-            {
-                scoreScript.scoreValue += 500;
-                alreadyCounted = true;
-            }
+                {
+                    scoreScript.scoreValue += 500;
+                    alreadyCounted = true;
+                }
                 moveSpeed = 0;
                 anims[0].SetTrigger("onDeath");
                 anims[1].SetTrigger("onDeath");
                 Destroy(gameObject, 1.5f);
+                bossFight = false;
                 victoryUI.transform.gameObject.SetActive(true);
             }
         }
