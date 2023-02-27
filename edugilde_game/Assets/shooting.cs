@@ -118,6 +118,6 @@ public class rocketLauncher : weapon
     {
         config.name = "rocketLauncher";
         config.shootTimer = 0.1f;
-        config.coolDownTime = 0.8f;
+        config.coolDownTime = 1.5f;
     }
 }

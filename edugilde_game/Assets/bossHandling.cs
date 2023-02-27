@@ -13,6 +13,10 @@ public class bossHandling : MonoBehaviour
     public Transform laserGunPos;
     public GameObject laserGun;
     public int bossScoreTrigger = 1500;
+    public AudioClip death;
+    public AudioClip bullet;
+    public AudioClip spawn;
+    public AudioClip laser;
 
     private float xBorder;
     private float yBorder;
@@ -34,6 +38,8 @@ public class bossHandling : MonoBehaviour
 
         initialPosition = transform.position;
         direction = true;
+        AudioSource.PlayClipAtPoint(spawn, transform.position);
+        
     }
 
     // Update is called once per frame
@@ -70,6 +76,7 @@ public class bossHandling : MonoBehaviour
                 shootTimer = 0;
                 Instantiate(enemyBullet, cannonLeft.position, Quaternion.identity);
                 Instantiate(enemyBullet, cannonRight.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(bullet, transform.position);
             }
 
             if(transform.position.y <= 18)
@@ -80,6 +87,7 @@ public class bossHandling : MonoBehaviour
                     laserCanFire = Time.time + laserFireRate;
                     GameObject bossGigaLaser = Instantiate(laserGun, laserGunPos.position, Quaternion.identity);
                     bossGigaLaser.transform.parent = transform;
+                    AudioSource.PlayClipAtPoint(laser, transform.position);
                     Destroy(bossGigaLaser, 1);
                 }
             }
@@ -100,6 +108,7 @@ public class bossHandling : MonoBehaviour
 
             if(lives <= 0)
             {
+                AudioSource.PlayClipAtPoint(death, transform.position);
                 if(!alreadyCounted)
             {
                 scoreScript.scoreValue += 500;

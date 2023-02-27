@@ -11,12 +11,15 @@ public class enemySpawner : MonoBehaviour
     public Transform spawnTop;
     public GameObject enemy1;
     public GameObject enemy2;
+    public GameObject boss;
     public float respawnTime1 = 2.8f;
     public float respawnTime2 = 15;
     private float respawnCooldown1 = 0;
     private float respawnCooldown2 = 0;
     public Camera cam;
     public TextMeshProUGUI textMesh;
+    public int maxEnemies = 1;
+    public int enemyCounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -70,11 +73,16 @@ public class enemySpawner : MonoBehaviour
             respawnTime1 = 1;
             respawnTime2 = 4;
         }
-        if(scoreScript.scoreValue >= 1500)
+        if(scoreScript.scoreValue >= 10)
         {
             respawnTime1 = 99999999999;
             respawnTime2 = 99999999999;
+            if(maxEnemies > enemyCounter)
+            {
+                Instantiate(boss, spawnTop.position, Quaternion.identity);
+                enemyCounter++;
+            }
         }
     }
-    
+
 }
