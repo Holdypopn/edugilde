@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  lives: 250
+  lives: 10
   cannonCoolDownTime: 1
   enemyBullet: {fileID: 3962460279500769492, guid: e3c45b01951e83644b517951981ff33b, type: 3}
   cannonLeft: {fileID: 4496866136795293938}
@@ -116,6 +116,7 @@ MonoBehaviour:
   bullet: {fileID: 8300000, guid: eec87171a2a4d664e9a9fd741fc5bd04, type: 3}
   spawn: {fileID: 8300000, guid: 8e3b895e8eae8074f89fbf12578713d3, type: 3}
   laser: {fileID: 8300000, guid: bb2ba56b032daed43ace60552b0d7087, type: 3}
+  victoryUI: {fileID: 0}
 --- !u!50 &4496866137826678977
 Rigidbody2D:
   serializedVersion: 4
@@ -371,6 +372,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3908319148639556413, guid: 6f5f7b468181b8149a4c527bfbda15b3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03f7a5468e3333c47b1683c247168f12, type: 2}
     m_RemovedComponents:
     - {fileID: 3908319148639556415, guid: 6f5f7b468181b8149a4c527bfbda15b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f5f7b468181b8149a4c527bfbda15b3, type: 3}
@@ -434,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CannonRight
       objectReference: {fileID: 0}
+    - target: {fileID: 7272367858813124262, guid: 15537b95c15d38d46b182b29a81d6a21, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03f7a5468e3333c47b1683c247168f12, type: 2}
     m_RemovedComponents:
     - {fileID: 7272367858813124261, guid: 15537b95c15d38d46b182b29a81d6a21, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 15537b95c15d38d46b182b29a81d6a21, type: 3}

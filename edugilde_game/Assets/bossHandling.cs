@@ -17,6 +17,7 @@ public class bossHandling : MonoBehaviour
     public AudioClip bullet;
     public AudioClip spawn;
     public AudioClip laser;
+    [SerializeField] public GameObject victoryUI;
 
     private float xBorder;
     private float yBorder;
@@ -30,10 +31,12 @@ public class bossHandling : MonoBehaviour
     private float laserFireRate;
     private float laserCanFire = 1;
     private bool alreadyCounted = false;
+    private Animator[] anims;
 
     // Start is called before the first frame update
     void Start()
     {
+        anims = GetComponentsInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         initialPosition = transform.position;
@@ -115,7 +118,10 @@ public class bossHandling : MonoBehaviour
                 alreadyCounted = true;
             }
                 moveSpeed = 0;
-                Destroy(gameObject, 1);
+                anims[0].SetTrigger("onDeath");
+                anims[1].SetTrigger("onDeath");
+                Destroy(gameObject, 1.5f);
+                victoryUI.transform.gameObject.SetActive(true);
             }
         }
     }
