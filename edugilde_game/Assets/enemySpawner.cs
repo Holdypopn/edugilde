@@ -20,6 +20,7 @@ public class enemySpawner : MonoBehaviour
     public TextMeshProUGUI textMesh;
     public int maxEnemies = 1;
     public int enemyCounter = 0;
+    public AudioClip bossMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -81,6 +82,7 @@ public class enemySpawner : MonoBehaviour
             {
                 Instantiate(boss, spawnTop.position, Quaternion.identity);
                 enemyCounter++;
+                AudioSource.PlayClipAtPoint(bossMusic, transform.position);
             }
         }
     }

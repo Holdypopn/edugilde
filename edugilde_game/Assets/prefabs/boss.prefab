@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  lives: 10
+  lives: 250
   cannonCoolDownTime: 1
   enemyBullet: {fileID: 3962460279500769492, guid: e3c45b01951e83644b517951981ff33b, type: 3}
   cannonLeft: {fileID: 4496866136795293938}
