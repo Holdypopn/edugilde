@@ -17,8 +17,9 @@ public class BackgroundMusicHandling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.FindGameObjectsWithTag("boss").Length != 0)
+        if(bossHandling.bossFight)
         {
+            
             normalMusic.Stop();
             if(isPlaying)
             {
@@ -27,7 +28,7 @@ public class BackgroundMusicHandling : MonoBehaviour
             }
         }
 
-        if(GameObject.FindGameObjectsWithTag("boss").Length == 0)
+        if(!bossHandling.bossFight)
         {
             bossMusic.Stop();
             if(!isPlaying)
